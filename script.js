@@ -1,14 +1,25 @@
 /**
  * Project 3 versions 0-4 - 2D Web Game
- * Name:
+ * Name:splash
  * 
  * Use this template to get started creating a simple 2D game for the web using P5.js. 
  */
 
 function setup() {
-
+ var gameState = "splash";
   createCanvas(600, 400);
 
+  // When mouse is clicked
+function mousePressed() {
+  // the current game transitions
+  if (gameState == "splash") {
+    gameState = "play"; // Move to "play" screen
+  } else if (gameState == "play") {
+    gameState = "gameOver"; // Move to "gameOver" screen
+  } else if (gameState == "gameOver") {
+    gameState = "splash"; // Move back to "splash" screen
+  }
+}
 }
 
 function draw() {
@@ -20,7 +31,7 @@ function draw() {
 
 }
 
-function splash() {
+function splash() // draw the "splash" screen {
   // this is what you would see when the game starts
   background(200);
   textAlign(CENTER);
@@ -30,7 +41,7 @@ function splash() {
   text("(click the mouse to continue)", width / 2, height / 2 + 30);
 }
 
-function play() {
+function play() // draw the "play" screen {
   // this is what you see when the game is running 
   background(0, 200, 0);
   fill(0, 0, 200)
@@ -40,7 +51,7 @@ function play() {
 
 }
 
-function gameOver() {
+function gameOver()// Draw the "gameOver" screen {
   // this is what you see when the game ends
   background(0);
   fill(255, 0, 0)
