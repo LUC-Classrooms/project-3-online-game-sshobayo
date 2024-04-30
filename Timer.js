@@ -44,6 +44,7 @@ function Timer(tempTime){
     }
   }
 
+  
   // draw a box on screen with a timer display
   this.display = function(tempX, tempY){
     this.x = tempX;
