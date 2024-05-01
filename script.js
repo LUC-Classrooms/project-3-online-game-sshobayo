@@ -101,7 +101,7 @@ for(let i =0; i < presents.length; i++){
   let d = dist(presents[i].x, presents[i].y, player1.x, player1.y);
   if(d < 50){
     presents.splice(i, 1);
-    score. ++;
+    score ++;
   }
 }
 text("elapsed time: " + timer.elapsedTime, width/2, 100)
